@@ -94,11 +94,11 @@ public Partido getPartido (int idPartido) {
                 vectorPartido = datosPartido.split(",");   
                      
                 int idPartido = Integer.parseInt(vectorPartido[0]);
-                int idEquipo1 = Integer.parseInt(vectorPartido[1]);
-                int idEquipo2 = Integer.parseInt(vectorPartido[2]);
+                String idEquipo1 = (vectorPartido[1]);
+                String idEquipo2 = (vectorPartido[2]);
                 int GolesEquipo1 = Integer.parseInt(vectorPartido[3]);
                 int GolesEquipo2 = Integer.parseInt(vectorPartido[4]);
-                partido = new Partido(idPartido, idEquipo1, idEquipo2, GolesEquipo1, GolesEquipo2);
+                 partido = new Partido(idPartido, idEquipo1, idEquipo2, GolesEquipo1, GolesEquipo2);
                 
               
                 this.addPartido(partido);

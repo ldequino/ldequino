@@ -1,6 +1,8 @@
 
 package tp;
 
+import tp.PronosticoDeportivo;
+
 public class TP {
 
     public static PronosticoDeportivo PRODE;
@@ -8,11 +10,11 @@ public class TP {
    
     public static void main(String[] args) {
         System.out.println ("Sistema de simulación de pronósticos deportivos.");
+        System.out.println ("Ejecutándose desde:"+System.getProperty("user.dir"));
         
         PRODE = new PronosticoDeportivo();
 
         PRODE.play();
     }
-  //Comit de prueba//
     
 }

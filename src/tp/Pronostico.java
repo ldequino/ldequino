@@ -14,7 +14,7 @@ public class Pronostico {
         this.Resultado = Resultado;
     }
     
-    public Pronostico() {
+    public Pronostico(int readidPronostico, Equipo equipo, Partido partido, char readResultado) {
         this.idParticipante = 0;
         this.idPartido = 0;
         this.Equipo = 0;
