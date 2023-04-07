@@ -49,14 +49,10 @@ public class ListaPartidos {
 public Partido getPartido (int idPartido) {
         
         Partido encontrado = null;
-      
-        for (Partido eq : this.getPartidos()) {
-           
+            for (Partido eq : this.getPartidos()) {
             if (eq.getidPartido() == idPartido) {
-               
                 encontrado = eq;
-                
-                break;
+            break;
             }
         }
       
@@ -67,6 +63,7 @@ public Partido getPartido (int idPartido) {
     public String toString() {
         return "ListaPartidos{" + "partidos=" + partidos + '}';
 
+    
     public String listar() {
         String lista = "";
         for (Partido partido: partidos) {
@@ -75,13 +72,13 @@ public Partido getPartido (int idPartido) {
         return lista;
         }
     
-    // cargar desde el archivo
-    public void cargarDeArchivo() {
-        // para las lineas del archivo csv
+  
+    public void cargarDeArchivo(ListaEquipos equipos) {
+      
         String datosPartido;
-        // para los datos individuales de cada linea
+  
         String vectorPartido[];
-        // para el objeto en memoria
+
         Partido partido;
         int fila = 0;
        
@@ -95,8 +92,7 @@ public Partido getPartido (int idPartido) {
                 if (fila == 1)
                     continue;              
                 vectorPartido = datosPartido.split(",");   
-                
-                
+                     
                 int idPartido = Integer.parseInt(vectorPartido[0]);
                 int idEquipo1 = Integer.parseInt(vectorPartido[1]);
                 int idEquipo2 = Integer.parseInt(vectorPartido[2]);
@@ -107,7 +103,7 @@ public Partido getPartido (int idPartido) {
               
                 this.addPartido(partido);
             }
-            //closes the scanner
+    
         } catch (IOException ex) {
                 System.out.println("Mensaje: " + ex.getMessage());
         }       

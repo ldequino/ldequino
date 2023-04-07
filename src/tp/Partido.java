@@ -9,7 +9,7 @@ public class Partido {
 	private int golesEquipo1;
 	private int golesEquipo2;
 
-	public Partido(int idPartido, String equipo1, String equipo2, int golesEquipo1, int golesEquipo2) {
+	public Partido(int idPartido, int golesEquipo1, int golesEquipo2, int GolesEquipo1, int GolesEquipo2) {
 		super();
                 this.idPartido = idPartido;
 		this.equipo1 = equipo1;

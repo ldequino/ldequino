@@ -46,5 +46,9 @@ public class Participante {
 	public String toString() {
 		return "Participante [ " + "idParticipante=" + idParticipante + ", nombre=" + nombre + ", pronostico=" + pronostico + "]";
 	}
+
+    void cargarPronosticos(ListaEquipos equipos, ListaPartidos partidos) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
      
 }

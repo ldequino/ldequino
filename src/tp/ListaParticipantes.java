@@ -53,24 +53,19 @@ public class ListaParticipantes {
      * @return Objeto Equipo (o null si no se encuentra)
      */
     public Participante getParticipante (int idParticipante) {
-        // Defini un objeto de tipo Equipo en dónde va a ir mi resultado
-        // Inicialmente es null, ya que no he encontrado el equipo que 
-        // buscaba todavía.
+       
         Participante encontrado = null;
-        // Recorro la lista de equipos que está cargada
+      
         for (Participante eq : this.getParticipantes()) {
-            // Para cada equipo obtengo el valor del ID y lo comparo con el que
-            // estoy buscando
+           
             if (eq.getIdParticipante() == idParticipante) {
-                // Si lo encuentro (son iguales) lo asigno como valor de encontrado
+              
                 encontrado = eq;
-                // Y hago un break para salir del ciclo ya que no hace falta seguir buscando
+               
                 break;
             }
         }
-        // Una vez fuera del ciclo retorno el equipo, pueden pasar dos cosas:
-        // 1- Lo encontré en el ciclo, entonces encontrado tiene el objeto encontrado
-        // 2- No lo encontré en el ciclo, entonces conserva el valor null del principio
+       
         return encontrado;
     }
 
@@ -104,29 +99,25 @@ public class ListaParticipantes {
             while (sc.hasNext()) {
                 // levanta los datos de cada linea
                 datosParticipante = sc.next();
-                // Descomentar si se quiere mostrar cada línea leída desde el archivo
-                // System.out.println(datosEquipo);  //muestra los datos levantados 
+     
                 fila ++;
-                // si es la cabecera la descarto y no se considera para armar el listado
+                
                 if (fila == 1)
                     continue;              
                  
-                //Proceso auxiliar para convertir los string en vector
-                // guarda en un vector los elementos individuales
+               
                 vectorParticipante = datosParticipante.split(",");   
                 
-                // graba el equipo en memoria
-                //convertir un string a un entero;
+               
                 int idParticipante = Integer.parseInt(vectorParticipante[0]);
                 String nombre = vectorParticipante[1];
                 String descripcion = vectorParticipante[2];
-                // crea el objeto en memoria
+            
                 participante = new Participante(idParticipante, nombre, descripcion);
-                
-                // llama al metodo add para grabar el equipo en la lista en memoria
+               
                 this.addParticipante(participante);
             }
-            //closes the scanner
+           
         } catch (IOException ex) {
                 System.out.println("Mensaje: " + ex.getMessage());
         }       

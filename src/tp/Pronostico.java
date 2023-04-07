@@ -55,7 +55,7 @@ public class Pronostico {
 
     @Override
     public String toString() {
-        return super.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return "Partido{" + "idPartido=" + idPartido + " Equipo=" + Equipo + ", Resultado=" + Resultado +  '}';
     }
 
     
