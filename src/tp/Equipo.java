@@ -47,5 +47,4 @@ public class Equipo {
         return "Equipo{" + "idEquipo=" + idEquipo + ", nombre=" + nombre + ", descripcion=" + descripcion + '}';
     }
     
-    
-}
+   }

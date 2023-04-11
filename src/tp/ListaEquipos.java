@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ListaEquipos {
-    // atributo
+ 
     private List<Equipo> equipos;
     private String equiposCSV;
 
@@ -38,7 +38,7 @@ public class ListaEquipos {
         this.equiposCSV = equiposCSV;
     }
     
-    // add y remove elementos
+  
     public void addEquipo(Equipo e) {
         this.equipos.add(e);
     }
@@ -46,25 +46,27 @@ public class ListaEquipos {
         this.equipos.remove(e);
     }
     
-    @Override
-    public String toString() {
-        return "ListaEquipos{" + "equipos=" + equipos + '}';
-    }
-public Equipo getEquipo (int idEquipo) {
-       
-        Equipo encontrado = null;
+    
+    public Equipo getEquipo (int idEquipo) {
         
+        Equipo encontrado = null;
+       
         for (Equipo eq : this.getEquipos()) {
             
             if (eq.getIdEquipo() == idEquipo) {
-               
+           
                 encontrado = eq;
-             
+                
                 break;
             }
         }
-   
+        
         return encontrado;
+    }
+
+    @Override
+    public String toString() {
+        return "ListaEquipos{" + "equipos=" + equipos + '}';
     }
 
     public String listar() {
@@ -75,46 +77,42 @@ public Equipo getEquipo (int idEquipo) {
         return lista;
     }
     
-    // cargar desde el archivo
+    
     public void cargarDeArchivo() {
-        // para las lineas del archivo csv
+        
         String datosEquipo;
-        // para los datos individuales de cada linea
+        
         String vectorEquipo[];
-        // para el objeto en memoria
+        
         Equipo equipo;
         int fila = 0;
        
         try { 
             Scanner sc = new Scanner(new File(this.getEquiposCSV()));
-            sc.useDelimiter("\n");   //setea el separador de los datos
+            sc.useDelimiter("\n");   
                 
             while (sc.hasNext()) {
-                // levanta los datos de cada linea
+                
                 datosEquipo = sc.next();
-                // Descomentar si se quiere mostrar cada línea leída desde el archivo
-                // System.out.println(datosEquipo);  //muestra los datos levantados 
+                 
                 fila ++;
-                // si es la cabecera la descarto y no se considera para armar el listado
+            
                 if (fila == 1)
                     continue;              
                  
-                //Proceso auxiliar para convertir los string en vector
-                // guarda en un vector los elementos individuales
+                
                 vectorEquipo = datosEquipo.split(",");   
                 
-                // graba el equipo en memoria
-                //convertir un string a un entero;
+                
                 int idEquipo = Integer.parseInt(vectorEquipo[0]);
                 String nombre = vectorEquipo[1];
                 String descripcion = vectorEquipo[2];
-                // crea el objeto en memoria
+               
                 equipo = new Equipo(idEquipo, nombre, descripcion);
-                
-                // llama al metodo add para grabar el equipo en la lista en memoria
+               
                 this.addEquipo(equipo);
             }
-            //closes the scanner
+            
         } catch (IOException ex) {
                 System.out.println("Mensaje: " + ex.getMessage());
         }       

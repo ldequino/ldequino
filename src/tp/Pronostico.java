@@ -2,61 +2,82 @@
 package tp;
 
 public class Pronostico {
-    private int idParticipante;
-    private int idPartido;
-    private int Equipo;
-    private String Resultado;
 
-    public Pronostico(int idParticipante, int idPartido, int Equipo, String Resultado) {
-        this.idParticipante = idParticipante;
-        this.idPartido = idPartido;
-        this.Equipo =  Equipo;
+    private int idPronostico;
+    private Partido Partido;
+    private Equipo Equipo;
+    private char Resultado;
+
+    public Pronostico(int idPronostico, Partido Partido, Equipo Equipo, char Resultado) {
+        this.idPronostico = idPronostico;
+        this.Partido = Partido;
+        this.Equipo = Equipo;
         this.Resultado = Resultado;
     }
-    
-    public Pronostico(int readidPronostico, Equipo equipo, Partido partido, char readResultado) {
-        this.idParticipante = 0;
-        this.idPartido = 0;
-        this.Equipo = 0;
-        this.Resultado = null;
+
+   
+    public Pronostico() {
+        this.idPronostico = 0;
+        this.Partido = null;
+        this.Equipo = null;
+        this.Resultado = '\u0000';
     }
 
-    public int getEquipo() {
+    public int getIdPronostico() {
+        return idPronostico;
+    }
+
+    public void setIdPronostico(int idPronostico) {
+        this.idPronostico = idPronostico;
+    }
+
+    public Partido getPartido() {
+        return Partido;
+    }
+
+    public void setPartido(Partido Partido) {
+        this.Partido = Partido;
+    }
+
+    public Equipo getEquipo() {
         return Equipo;
     }
 
-    public int getIdPartido() {
-        return idPartido;
-    }
-
-    public int getIdParticipante() {
-        return idParticipante;
-    }
-
-    public String getResultado() {
-        return Resultado;
-    }
-
-    public void setEquipo(int Equipo) {
+    public void setEquipo(Equipo Equipo) {
         this.Equipo = Equipo;
     }
 
-    public void setIdParticipante(int idParticipante) {
-        this.idParticipante = idParticipante;
+    public char getResultado() {
+        return Resultado;
     }
 
-    public void setResultado(String Resultado) {
+    public void setResultado(char Resultado) {
         this.Resultado = Resultado;
-    }
-
-    public void setIdPartido(int idPartido) {
-        this.idPartido = idPartido;
     }
 
     @Override
     public String toString() {
-        return "Partido{" + "idPartido=" + idPartido + " Equipo=" + Equipo + ", Resultado=" + Resultado +  '}';
+        return "Pronostico{" + "idPronostico=" + idPronostico + ", Partido=" + Partido + ", Equipo=" + Equipo + ", Resultado=" + Resultado + '}';
     }
 
     
+    public int puntos() {
+        int puntos = 0;
+        char pron = getResultado();
+
+        Partido partidoReal = getPartido();
+
+        char rfinal = partidoReal.resultado();
+
+        if (pron == rfinal) {
+            puntos = +1;
+        } else {
+            if (pron != rfinal) {
+                puntos = +0;
+            }
+        }
+
+        return puntos;
+
+    }
 }
