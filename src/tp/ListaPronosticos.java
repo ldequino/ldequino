@@ -110,19 +110,15 @@ public class ListaPronosticos {
         }
     }
 
-    public void cargarDeArchivoTodos(
-            ListaEquipos listaequipos,
-            ListaPartidos listapartidos
-    ) {
-
+    public void cargarDeArchivoTodos(ListaEquipos listaequipos,
+                                   ListaPartidos listapartidos){
         String datosPronostico;
         String vectorPronostico[];
-
         int fila = 0;
 
         try {
             Scanner sc = new Scanner(new File(this.getPronosticosCSV()));
-            sc.useDelimiter("\n");   //setea el separador de los datos
+            sc.useDelimiter("\n");   
 
             while (sc.hasNext()) {
 

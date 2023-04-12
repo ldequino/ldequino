@@ -72,9 +72,9 @@ public class Partido {
 
     @Override
     public String toString() {
-        return "Partido [" + "idPartido=" + idPartido + ", equipo1=" + equipo1 + ", equipo2=" + equipo2 + ", golesEquipo1=" + golesEquipo1
-                + ", golesEquipo2=" + golesEquipo2 + "]";
-    }
+        return "Partido Numero " + idPartido + ", Equipo " + equipo1 + " Consiguio " + golesEquipo1 + " Goles" + "   " + "Equipo " +  equipo2  + 
+                 " Consiguio " + golesEquipo2 + " Goles";
+    } 
 
     public char resultado() {
         char resultado = 'X';
