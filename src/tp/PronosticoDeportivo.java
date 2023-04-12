@@ -21,18 +21,19 @@ public class PronosticoDeportivo {
         
         partidos.cargarDeArchivo(equipos);
         System.out.println("Los Resultados de los partidos son: " + partidos.listar());
-
-        participantes.cargarDeArchivo();
-        System.out.println("Los participantes son: " + participantes.listar());
        
-        //pronosticos.cargarDeArchivo();
-        //System.out.println("Los Pronosticos cargados son: " + pronosticos.listar());
+        participantes.cargarDeArchivo();
+        // Una vez cargados los participantes, para cada uno de ellos
+        // cargar sus pronósticos
+        for (Participante p : participantes.getParticipantes()) {
+            p.cargarPronosticos(equipos, partidos);
+        }
+        
+        System.out.println("Los participantes cargados son: " + participantes.listar());
         
         
-        //for (Participante p : participantes.getParticipantes()) {
-           // p.cargarPronosticos(equipos, partidos);
-        //}
-        //pronosticos.cargarDeArchivo(0, equipos, partidos);
+      
+        
         
         
         

@@ -84,7 +84,7 @@ public class ListaPronosticos {
                 // levanta los datos de cada linea
                 datosPronostico = sc.next();
                 // Descomentar si se quiere mostrar cada línea leída desde el archivo
-                 System.out.println(datosPronostico);  //muestra los datos levantados 
+                 //System.out.println(datosPronostico);  //muestra los datos levantados 
                 fila++;
                 // si es la cabecera la descarto y no se considera para armar el listado
                 if (fila == 1) {
@@ -145,7 +145,7 @@ public class ListaPronosticos {
                 // levanta los datos de cada linea
                 datosPronostico = sc.next();
                 // Descomentar si se quiere mostrar cada línea leída desde el archivo
-                // System.out.println(datosPronostico);  //muestra los datos levantados 
+                //System.out.println(datosPronostico);  //muestra los datos levantados 
                 fila++;
                 // si es la cabecera la descarto y no se considera para armar el listado
                 if (fila == 1) {
