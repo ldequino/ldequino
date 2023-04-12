@@ -8,7 +8,7 @@ public class Pronostico {
     private Equipo Equipo;
     private char Resultado;
 
-    public Pronostico(int idPronostico, Partido Partido, Equipo Equipo, char Resultado) {
+    public Pronostico(int idPronostico, Equipo Equipo, Partido Partido, char Resultado, int readidParticipante) {
         this.idPronostico = idPronostico;
         this.Partido = Partido;
         this.Equipo = Equipo;
