@@ -67,7 +67,7 @@ public class Pronostico {
 
         Partido partidoReal = getPartido();
 
-        char rfinal = partidoReal.resultado();
+        char rfinal = partidoReal.Resultado();
 
         if (pron == rfinal) {
             puntos = +1;

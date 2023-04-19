@@ -76,21 +76,27 @@ public class Partido {
                  " Consiguio " + golesEquipo2 + " Goles";
     } 
 
-    public char resultado() {
+    public char getResultado(Equipo equipo) {
         char resultado = 'X';
-        int G1 = getGolesEquipo1();
-        int G2 = getGolesEquipo2();
-        if (G1 > G2) {
-            resultado = 'G';
-        } else {
-            if (G1 == G2) {
-                resultado = 'E';
-            } else {
-                if (G1 < G2) {
-                    resultado = 'P';
+        
+        if (equipo.getNombre().equals(equipo1.getNombre())) {
+            if (this.golesEquipo1 > this.golesEquipo2){
+                resultado = 'G';
+             }else if (this.golesEquipo1 < this.golesEquipo2){
+                        resultado = 'P';
+              }else {
+                 resultado = 'E';
                 }
-            }
-        }
-        return resultado;
-    }
-}
+             }else if (equipo.getNombre().equals(equipo2.getNombre())) {
+            if (this.golesEquipo2 > this.golesEquipo1){
+                resultado = 'G';
+             }else if (this.golesEquipo2 < this.golesEquipo1){
+                        resultado = 'P';
+              }else {
+                 resultado = 'E';
+              }
+              }
+            return resultado;
+      }
+  
+  }
