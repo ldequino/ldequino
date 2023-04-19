@@ -5,15 +5,12 @@ package tp;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class Participante {
     private Integer idParticipante;
     private String nombre;
     private ListaPronosticos pronosticos;
     private Integer puntaje;
+    
     
     public Participante(Integer idParticipante, String nombre, ListaPronosticos pronosticos, Integer puntaje) {
         this.idParticipante = idParticipante;

@@ -1,7 +1,7 @@
 
 
 package tp;
-//nuevos cambios
+
 public class Partido {
 
     private int idPartido;
@@ -96,6 +96,8 @@ public class Partido {
                  resultado = 'E';
               }
               }
+        
+        
             return resultado;
       }
   

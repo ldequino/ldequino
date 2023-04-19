@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class ListaEquipos {
  
+    
     private List<Equipo> equipos;
     private String equiposCSV;
 

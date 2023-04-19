@@ -12,6 +12,8 @@ public class Equipo {
         this.descripcion = descripcion;
     }
     
+    
+    
     public Equipo() {
         this.idEquipo = 0;
         this.nombre = null;

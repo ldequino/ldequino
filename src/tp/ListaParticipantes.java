@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class ListaParticipantes {
     // atributo
     private List<Participante> participantes;

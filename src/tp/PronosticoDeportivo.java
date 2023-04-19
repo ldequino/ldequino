@@ -14,6 +14,8 @@ public class PronosticoDeportivo {
         pronosticos = new ListaPronosticos();
     }
 
+    
+    
     public void play(){
       
         equipos.cargarDeArchivo();
